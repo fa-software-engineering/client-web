@@ -1,0 +1,13 @@
+@use 'src/modules/core/styles/normalize/normalize';
+@use 'globals/globals';
+@use 'src/modules/core/styles/custom/custom';
+@use 'src/modules/core/styles/fonts/fonts';
+@use 'src/modules/core/styles/overrides/overrides';
+
+@mixin common() {
+  @include normalize.normalize();
+  @include globals.globals();
+  @include custom.custom();
+  @include fonts.fonts();
+  @include overrides.overrides();
+}

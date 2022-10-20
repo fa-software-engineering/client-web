@@ -1,0 +1,22 @@
+@use '../../../shared/styles/constants';
+
+@mixin checkbox() {
+  .p-checkbox {
+    cursor: pointer;
+
+    .p-checkbox-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: constants.$trn-fast-out;
+
+      &:not(.p-checkbox-disabled):hover {
+        border-color: constants.$clr-primary;
+      }
+
+      .p-checkbox-icon {
+        transform: translateY(1px);
+      }
+    }
+  }
+}

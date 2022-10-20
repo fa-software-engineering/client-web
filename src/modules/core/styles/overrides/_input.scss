@@ -1,0 +1,100 @@
+@use '../../../shared/styles/constants';
+
+@mixin input() {
+  .p-dropdown {
+    display: flex;
+    transition: constants.$trn-fast-out;
+    transition-property: border-color;
+
+    &.p-input-icon-left {
+      .p-dropdown-label {
+        margin-left: 32px;
+      }
+    }
+
+    .p-dropdown-clear-icon {
+      margin: auto 0;
+      position: static;
+    }
+
+    .p-dropdown-trigger {
+      position: relative;
+    }
+  }
+
+  .p-inputtextarea {
+    min-width: 100px;
+  }
+
+  .p-inputnumber {
+    .p-inputnumber-button-group {
+      .p-inputnumber-button {
+        position: relative;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+
+        .p-button-icon {
+          margin: auto;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .p-inputtext {
+    transition: constants.$trn-fast-out;
+    transition-property: box-shadow, border-color;
+  }
+
+  .p-input-icon-left,
+  .p-input-icon-right,
+  .p-float-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .p-inputtext {
+      width: 100%;
+    }
+
+    i {
+      top: unset;
+      margin-top: unset;
+      position: absolute;
+    }
+
+    label {
+      margin: unset;
+      line-height: unset;
+    }
+  }
+
+  .p-input-icon-left {
+    .p-inputtext {
+      padding-left: 32px;
+    }
+
+    .pi:first-child {
+      left: 12px;
+    }
+  }
+
+  .p-input-icon-right {
+    .p-inputtext {
+      padding-right: 32px;
+    }
+
+    .pi:last-child {
+      right: 12px;
+    }
+  }
+
+  .p-inputgroup {
+    display: flex;
+
+    .p-inputgroup-addon {
+      min-width: unset;
+    }
+  }
+}
