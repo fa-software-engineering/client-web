@@ -15,6 +15,5 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SettingsView: typeof import('./settings/views/SettingsView.vue')['default']
     TabMenu: typeof import('primevue/tabmenu')['default']
-    Toolbar: typeof import('primevue/toolbar')['default']
   }
 }
