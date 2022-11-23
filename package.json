@@ -14,7 +14,6 @@
         "@vuelidate/core": "^2.0.0-alpha.42",
         "@vuelidate/validators": "^2.0.0-alpha.30",
         "@vueuse/core": "^9.3.0",
-        "@vueuse/integrations": "^9.6.0",
         "axios": "^0.27.2",
         "chart.js": "^3.8.0",
         "keycloak-js": "^19.0.3",
