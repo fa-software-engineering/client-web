@@ -44,8 +44,8 @@ const config: KeycloakConfig = {
 const initOptions: KeycloakInitOptions = {
   enableLogging: true,
 };
-// app.use(vueKeycloak, { config, initOptions });
+app.use(vueKeycloak, { config, initOptions });
 
 // Mount
-// isTokenReady().then(() => app.mount('#app'));
-app.mount('#app');
+isTokenReady().then(() => app.mount('#app'));
+// app.mount('#app');
