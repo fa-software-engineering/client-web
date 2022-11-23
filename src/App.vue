@@ -45,7 +45,9 @@ function goSettings() {
     </header>
 
     <RouterView v-slot="{ Component }">
-      <Component :is="Component" class="page" />
+      <Transition mode="out-in">
+        <Component :is="Component" class="page" />
+      </Transition>
     </RouterView>
   </div>
 </template>
@@ -89,6 +91,7 @@ function goSettings() {
   }
 
   .page {
+    @include transitions.fade();
     flex: auto;
     overflow: auto;
   }

@@ -4,11 +4,11 @@ import {
   whenever,
 } from '@vueuse/core';
 import { readonly, shallowRef } from 'vue';
-import type { User } from '~/settings/dto/user';
+import type { UserInfo } from '~/settings/dto/user';
 import { useCurrentUserService } from '~/settings/services/current-user';
 
 const useCurrentUserState = createGlobalState(() => ({
-  currentUser: shallowRef<User>(),
+  currentUser: shallowRef<UserInfo>(),
 }));
 
 export const useCurrentUser = createSharedComposable(() => {

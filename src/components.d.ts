@@ -8,18 +8,21 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BasePanel: typeof import('./settings/components/BasePanel.vue')['default']
-    BubbleHint: typeof import('./settings/components/BubbleHint.vue')['default']
     Button: typeof import('primevue/button')['default']
+    Column: typeof import('primevue/column')['default']
+    DataTable: typeof import('primevue/datatable')['default']
     EmployeesView: typeof import('./employees/views/EmployeesView.vue')['default']
     Fieldset: typeof import('primevue/fieldset')['default']
     HomeView: typeof import('./home/views/HomeView.vue')['default']
+    InputText: typeof import('primevue/inputtext')['default']
+    MultiInput: typeof import('./shared/components/MultiInput.vue')['default']
     ProgressSpinner: typeof import('primevue/progressspinner')['default']
     ProjectsView: typeof import('./projects/views/ProjectsView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SettingsView: typeof import('./settings/views/SettingsView.vue')['default']
     TabMenu: typeof import('primevue/tabmenu')['default']
-    TheNotificationPanel: typeof import('./settings/components/TheNotificationPanel.vue')['default']
+    TheCreateEmployeeDialog: typeof import('./employees/components/TheCreateEmployeeDialog.vue')['default']
     TheProfilePanel: typeof import('./settings/components/TheProfilePanel.vue')['default']
   }
 }
