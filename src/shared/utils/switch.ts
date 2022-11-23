@@ -1,49 +1,35 @@
-export function switchAssign<
-  V extends string | number | null | undefined,
-  M extends Record<Exclude<V, null | undefined>, unknown>,
->(
-  value: V,
-  map: M,
-  fallback?: M[Exclude<typeof value, null | undefined>],
-): M[Exclude<typeof value, null | undefined>] | undefined {
-  if (value == null) {
-    return fallback;
+export function switchAssign<V extends string | number, R, F = undefined>(
+  value: V | null,
+  map: Record<V, R>,
+  fallback?: F,
+): R | F {
+  if (value != null && map[value]) {
+    return map[value];
   } else {
-    return map[value as Exclude<typeof value, null | undefined>];
+    return fallback as F;
   }
 }
 
 export function switchExec<
-  V extends string | number | null | undefined,
-  M extends Record<Exclude<V, null | undefined>, (value: V) => unknown>,
->(
-  value: V,
-  map: M,
-  fallback?: ReturnType<M[Exclude<typeof value, null | undefined>]>,
-): ReturnType<M[Exclude<typeof value, null | undefined>]> | undefined {
-  if (value == null) {
-    return fallback;
+  V extends string | number,
+  R extends (...args: any[]) => any,
+  F = undefined,
+>(value: V | null, map: Record<V, R>, fallback?: F): ReturnType<R> | F {
+  if (value != null && map[value]) {
+    return map[value](value);
   } else {
-    const handler = map[value as Exclude<typeof value, null | undefined>];
-    if (handler) {
-      return handler(value) as any;
-    }
+    return fallback as F;
   }
 }
 
-export function switchThrow<
-  V extends string | number | null | undefined,
-  M extends Record<Exclude<V, null | undefined>, unknown>,
->(value: V, map: M, fallback?: unknown): never | void {
-  if (value == null) {
+export function switchThrow<V extends string | number, R, F = undefined>(
+  value: V | null,
+  map: Record<V, R>,
+  fallback?: F,
+): never | void {
+  if (value != null && map[value]) {
+    throw map[value];
+  } else if (fallback) {
     throw fallback;
-  } else {
-    const reason = map[value as Exclude<typeof value, null | undefined>];
-    if (reason) {
-      throw reason;
-    }
-    if (fallback) {
-      throw fallback;
-    }
   }
 }

@@ -90,6 +90,7 @@ function goSettings() {
 
   .page {
     flex: auto;
+    overflow: auto;
   }
 }
 </style>
