@@ -1,0 +1,45 @@
+@use 'src/shared/styles/constants';
+
+@mixin table() {
+  .p-datatable,
+  .p-treetable {
+    .p-sortable-column {
+      transition: box-shadow constants.$trn-fast-out !important;
+    }
+
+    .p-datatable-footer,
+    .p-treetable-footer {
+      padding: 0 !important;
+    }
+
+    .p-datatable-tbody,
+    .p-treetable-tbody {
+      & > tr {
+        transition: constants.$trn-fast-out;
+
+        &:focus,
+        &.p-highlight {
+          font-weight: unset;
+          outline: none;
+          background: #eef2ff;
+        }
+      }
+    }
+  }
+
+  .p-treetable {
+    .p-treetable-tbody {
+      & > tr {
+        td:first-child {
+          display: flex;
+          align-items: center;
+          border: none;
+
+          .p-treetable-toggler {
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}

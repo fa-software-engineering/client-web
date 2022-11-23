@@ -1,0 +1,38 @@
+// Common
+$cmn-border-radius: var(--border-radius);
+$cmn-focus-border: var(--focus-ring);
+
+// Transitions
+$trn-very-slow-out: 0.4s ease-out;
+$trn-very-slow-in: 0.4s ease-in;
+$trn-slow-out: 0.2s ease-out;
+$trn-slow-in: 0.2s ease-in;
+$trn-fast-out: 0.1s ease-out;
+$trn-fast-in: 0.1s ease-in;
+
+// Font-sizes
+$fsz-h1: 26px;
+$fsz-h2: 22px;
+$fsz-h3: 18px;
+$fsz-text: 14px;
+
+// Colors
+$clr-primary: var(--primary-color);
+$clr-text: var(--text-color);
+$clr-border: var(--surface-border);
+$clr-danger: var(--red-400);
+$clr-bg: var(--surface-ground);
+$clr-bg-card: var(--surface-card);
+$clr-bg-danger: var(--red-100);
+$clr-state-normal: #47ea6d;
+$clr-state-warning: #e5b034;
+$clr-state-danger: #ec4444;
+
+// Breakpoints
+$bpt-large: 1500px;
+$bpt-normal: 1000px;
+$bpt-small: 500px;
+
+// Layers
+$zin-overlap: 10;
+$zin-auth-lock: 1001;
