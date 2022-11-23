@@ -1,19 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import App from '~/App.vue';
-import PrimeVue from 'primevue/config'
-import { createApp } from 'vue'
-import { primeVueConfig } from '~/modules/core/constants/prime-vue-config'
-import { createPinia } from 'pinia'
-import Tooltip from 'primevue/tooltip'
+import PrimeVue from 'primevue/config';
+import { createApp } from 'vue';
+import Tooltip from 'primevue/tooltip';
 import ToastService from 'primevue/toastservice';
-import ConfirmationService from 'primevue/confirmationservice'
+import ConfirmationService from 'primevue/confirmationservice';
+import type { KeycloakConfig, KeycloakInitOptions } from 'keycloak-js';
+import { isTokenReady, vueKeycloak } from '@baloise/vue-keycloak';
+import { primeVueConfig } from '~/core/constants/prime-vue-config';
+import App from '~/App.vue';
+import {
+  KC_CLIENT_ID,
+  KC_REALM,
+  KC_URL,
+} from '~/core/constants/keycloak-config';
+import { employeesRoute } from '~/employees/router';
+import { coreRoute } from '~/core/router';
+import { projectsRoute } from '~/projects/router';
+import { settingsRoute } from '~/settings/router';
+import { homeRoute } from '~/home/router';
 
 const app = createApp(App);
 
 // Router
 const router = createRouter({
   history: createWebHistory(),
-  routes: [],
+  routes: [homeRoute, employeesRoute, projectsRoute, settingsRoute],
 });
 app.use(router);
 
@@ -24,9 +35,17 @@ app
   .use(ConfirmationService)
   .directive('tooltip', Tooltip);
 
-// Pinia
-const pinia = createPinia();
-app.use(pinia);
+// Keycloak
+const config: KeycloakConfig = {
+  url: KC_URL,
+  realm: KC_REALM,
+  clientId: KC_CLIENT_ID,
+};
+const initOptions: KeycloakInitOptions = {
+  enableLogging: true,
+};
+// app.use(vueKeycloak, { config, initOptions });
 
 // Mount
+// isTokenReady().then(() => app.mount('#app'));
 app.mount('#app');

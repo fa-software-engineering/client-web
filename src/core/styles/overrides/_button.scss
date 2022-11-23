@@ -1,0 +1,50 @@
+@use 'src/shared/styles/constants';
+
+@mixin button() {
+  .p-selectbutton {
+    .p-button {
+      transition: constants.$trn-slow-out;
+    }
+  }
+
+  .p-button {
+    display: flex;
+    align-items: center;
+    transition: constants.$trn-slow-out;
+
+    &.p-button-icon-only {
+      display: flex;
+
+      .p-button-icon {
+        margin: auto;
+        padding: 0 10px;
+      }
+
+      .p-button-label {
+        display: none;
+      }
+    }
+  }
+
+  .p-buttonset {
+    display: flex;
+
+    .p-button {
+      border-radius: 0;
+
+      &:focus {
+        z-index: 1;
+      }
+
+      &:first-child {
+        border-top-left-radius: constants.$cmn-border-radius;
+        border-bottom-left-radius: constants.$cmn-border-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: constants.$cmn-border-radius;
+        border-bottom-right-radius: constants.$cmn-border-radius;
+      }
+    }
+  }
+}

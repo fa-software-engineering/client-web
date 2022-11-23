@@ -1,0 +1,6 @@
+@use 'src/shared/styles/constants';
+@use 'scrollbar';
+
+@mixin custom() {
+  @include scrollbar.scrollbar();
+}

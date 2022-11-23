@@ -1,0 +1,11 @@
+@use 'src/core/styles/normalize/normalize';
+@use 'globals/globals';
+@use 'src/core/styles/fonts/fonts';
+@use 'src/core/styles/overrides/overrides';
+
+@mixin common() {
+  @include normalize.normalize();
+  @include globals.globals();
+  @include fonts.fonts();
+  @include overrides.overrides();
+}

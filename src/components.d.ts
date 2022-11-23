@@ -7,10 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Counter: typeof import('./components/Counter.vue')['default']
-    Footer: typeof import('./components/Footer.vue')['default']
-    README: typeof import('./components/README.md')['default']
+    Button: typeof import('primevue/button')['default']
+    EmployeesView: typeof import('./employees/views/EmployeesView.vue')['default']
+    HomeView: typeof import('./home/views/HomeView.vue')['default']
+    ProjectsView: typeof import('./projects/views/ProjectsView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SettingsView: typeof import('./settings/views/SettingsView.vue')['default']
+    TabMenu: typeof import('primevue/tabmenu')['default']
+    Toolbar: typeof import('primevue/toolbar')['default']
   }
 }
