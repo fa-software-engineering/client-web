@@ -24,5 +24,6 @@ declare module '@vue/runtime-core' {
     TabMenu: typeof import('primevue/tabmenu')['default']
     TheCreateEmployeeDialog: typeof import('./employees/components/TheCreateEmployeeDialog.vue')['default']
     TheProfilePanel: typeof import('./settings/components/TheProfilePanel.vue')['default']
+    VacancyView: typeof import('./vacancies/views/VacancyView.vue')['default']
   }
 }

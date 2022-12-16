@@ -30,7 +30,7 @@ async function handleUpdate({
   <div class="component">
     <DataTable
       v-model:editingRows="editingRows"
-      :value="users"
+      :value="data"
       :filters="filters"
       :global-filter-fields="['username', 'firstName', 'lastName', 'email']"
       edit-mode="row"

@@ -15,6 +15,11 @@ const menuItems: MenuItem[] = [
     icon: PrimeIcons.BRIEFCASE,
     to: { name: RouteName.PROJECTS },
   },
+  {
+    label: 'Вакансии',
+    icon: PrimeIcons.COMPASS,
+    to: { name: RouteName.VACANCIES },
+  },
 ];
 
 const router = useRouter();

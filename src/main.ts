@@ -14,17 +14,23 @@ import {
   KC_URL,
 } from '~/core/constants/keycloak-config';
 import { employeesRoute } from '~/employees/router';
-import { coreRoute } from '~/core/router';
 import { projectsRoute } from '~/projects/router';
 import { settingsRoute } from '~/settings/router';
 import { homeRoute } from '~/home/router';
+import { vacanciesRoute } from '~/vacancies/router';
 
 const app = createApp(App);
 
 // Router
 const router = createRouter({
   history: createWebHistory(),
-  routes: [homeRoute, employeesRoute, projectsRoute, settingsRoute],
+  routes: [
+    homeRoute,
+    employeesRoute,
+    vacanciesRoute,
+    projectsRoute,
+    settingsRoute,
+  ],
 });
 app.use(router);
 
