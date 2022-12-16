@@ -20,6 +20,11 @@ const menuItems: MenuItem[] = [
     icon: PrimeIcons.COMPASS,
     to: { name: RouteName.VACANCIES },
   },
+  {
+    label: 'Кандидаты',
+    icon: PrimeIcons.ID_CARD,
+    to: { name: RouteName.CANDIDATES },
+  },
 ];
 
 const router = useRouter();

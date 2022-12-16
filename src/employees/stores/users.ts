@@ -1,4 +1,8 @@
-import { createGlobalState, createSharedComposable } from '@vueuse/core';
+import {
+  createGlobalState,
+  createSharedComposable,
+  tryOnMounted,
+} from '@vueuse/core';
 import { readonly, shallowRef } from 'vue';
 import type { User } from '~/employees/dto/user';
 import { useUsersService } from '~/employees/services/users';
@@ -15,6 +19,7 @@ export const useUsers = createSharedComposable(() => {
   async function fetch() {
     users.value = await usersService.users();
   }
+  tryOnMounted(() => fetch());
 
   async function update(userId: string, payload: UpdateUser) {
     await usersService.updateUser(userId, payload);

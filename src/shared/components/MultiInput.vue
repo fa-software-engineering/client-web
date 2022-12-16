@@ -258,7 +258,7 @@ const slots = useSlots();
     z-index: 1;
     position: absolute;
     left: 10px;
-    top: calc(50% + 6px - #{constants.$fsz-text});
+    top: calc(50% + 8px - #{constants.$fsz-text});
     font-size: constants.$fsz-text;
     pointer-events: none;
 

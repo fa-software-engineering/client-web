@@ -1,6 +1,10 @@
 // @ts-expect-error
 import * as crypto from 'crypto';
-import { createGlobalState, createSharedComposable } from '@vueuse/core';
+import {
+  createGlobalState,
+  createSharedComposable,
+  tryOnMounted,
+} from '@vueuse/core';
 import { readonly, shallowRef } from 'vue';
 import type { Vacancy } from '~/vacancies/dto/vacancy';
 import type { CreateVacancy } from '~/vacancies/dto/create-vacancy';
@@ -37,6 +41,7 @@ export const useVacancies = createSharedComposable(() => {
       },
     ];
   }
+  tryOnMounted(() => fetch());
 
   async function create(payload: CreateVacancy) {
     vacancies.value = [

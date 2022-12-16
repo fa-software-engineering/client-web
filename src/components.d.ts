@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BasePanel: typeof import('./settings/components/BasePanel.vue')['default']
     Button: typeof import('primevue/button')['default']
+    CandidatesView: typeof import('./candidates/views/CandidatesView.vue')['default']
     Column: typeof import('primevue/column')['default']
     DataTable: typeof import('primevue/datatable')['default']
     EmployeesView: typeof import('./employees/views/EmployeesView.vue')['default']
@@ -24,6 +25,7 @@ declare module '@vue/runtime-core' {
     TabMenu: typeof import('primevue/tabmenu')['default']
     TheCreateEmployeeDialog: typeof import('./employees/components/TheCreateEmployeeDialog.vue')['default']
     TheProfilePanel: typeof import('./settings/components/TheProfilePanel.vue')['default']
+    VacanciesView: typeof import('./vacancies/views/VacanciesView.vue')['default']
     VacancyView: typeof import('./vacancies/views/VacancyView.vue')['default']
   }
 }

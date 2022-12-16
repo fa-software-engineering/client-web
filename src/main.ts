@@ -18,6 +18,7 @@ import { projectsRoute } from '~/projects/router';
 import { settingsRoute } from '~/settings/router';
 import { homeRoute } from '~/home/router';
 import { vacanciesRoute } from '~/vacancies/router';
+import { candidatesRoute } from '~/candidates/router';
 
 const app = createApp(App);
 
@@ -28,6 +29,7 @@ const router = createRouter({
     homeRoute,
     employeesRoute,
     vacanciesRoute,
+    candidatesRoute,
     projectsRoute,
     settingsRoute,
   ],

@@ -70,6 +70,14 @@ function handleCreate() {
       <template #header>
         <header class="header">
           <MultiInput
+            v-model="search"
+            class="search"
+            icon="SEARCH"
+            placeholder="Поиск"
+            is-simple
+          />
+
+          <MultiInput
             v-model="form.position"
             class="position-input"
             label="Позиция"
@@ -145,8 +153,8 @@ function handleCreate() {
       display: flex;
       gap: 10px;
 
-      .position-input {
-        margin-left: auto;
+      .search {
+        margin-right: auto;
       }
     }
   }
